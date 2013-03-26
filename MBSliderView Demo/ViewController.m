@@ -28,22 +28,20 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     MBSliderView *s1 = [[MBSliderView alloc] initWithFrame:CGRectMake(20.0, 20.0, self.view.frame.size.width-40.0, 44.0)];
-    [s1 setText:@"MBSliderView"]; // set the label text
-    //[s1 setThumbColor:[self randomColor]]; // set custom thumb color
-    //[s1 setLabelColor:[self randomColor]]; // set custom label color
+    s1.label.text = @"MBSliderView"; // set the label text
     [s1 setDelegate:self]; // set the MBSliderView delegate
     [self.view addSubview:s1];
     [s1 release];
     
     
     // Loaded from nib
-    [s2 setText:@"Customized text"];
+    s2.label.text = @"Customized text";
     [s2 setThumbColor:[UIColor colorWithRed:28.0/255.0 green:190.0/255.0 blue:28.0/255.0 alpha:1.0]];
     
-    [s3 setText:@"Loaded from nib"];
+    s3.label.text = @"Loaded from nib";
     [s3 setThumbColor:[UIColor colorWithRed:190.0/255.0 green:28.0/255.0 blue:28.0/255.0 alpha:1.0]];
     
-    [s4 setText:@"Customizable"];
+    s4.label.text = @"Customizable";
     [s4 setThumbColor:[UIColor colorWithRed:28.0/255.0 green:28.0/255.0 blue:190.0/255.0 alpha:1.0]];
 }
 
@@ -59,7 +57,7 @@
 - (void) sliderDidSlide:(MBSliderView *)slideView {
     // Customization example
     [slideView setThumbColor:[self randomColor]];
-    [slideView setLabelColor:[self randomColor]];
+    slideView.label.textColor = [self randomColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated

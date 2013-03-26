@@ -18,8 +18,9 @@
     BOOL _sliding;
 }
 
-@property (nonatomic, assign) NSString *text;
-@property (nonatomic, assign) UIColor *labelColor;
+@property (nonatomic, retain) UISlider *slider;
+@property (nonatomic, retain) UILabel *label;
+
 @property (nonatomic, assign) IBOutlet id<MBSliderViewDelegate> delegate;
 @property (nonatomic) BOOL enabled;
 
