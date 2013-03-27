@@ -168,7 +168,9 @@ static const CGFloat gradientDimAlpha = 0.5;
         }
 		
 		[_slider setValue:0.0 animated: YES];
-        _label.alpha = 1.0;
+        [UIView animateWithDuration:0.25 delay:0.0 options:UIViewAnimationCurveEaseIn animations:^{
+            _label.alpha = 1.0;
+        }completion:nil];
         [_label setAnimated:YES];
 	}
 }
